@@ -1,0 +1,80 @@
+<ion-view id="cart" view-title="购物车" hide-back-button="true" cache-view="false">
+  <ion-content class="scroll-content" scroll="false">
+    <link href="../css/cart/cart.css" rel="stylesheet">
+    <!-- 头部 -->
+    <!--<header id="header">
+      <div class="header-left">
+        <div ng-click="func_goBack()">
+          <span></span>
+        </div >
+      </div>
+      <div class="header-center">
+        <span>购物车</span>
+      </div>
+      <div class="header-right" ng-click="func_goHome()">
+        <span></span>
+      </div>
+    </header>-->
+    <!-- 安全 -->
+    <div id="anquan">
+      <div class="anquan-warp">
+        <em></em>
+        <span>您正在安全购物环境中，请放心购物</span>
+      </div>
+    </div>
+    <!-- 产品列表 -->
+    <div id="pro">
+      <div class="pro-warp" ng-repeat="business in obj_cartDbData.data">
+        <!-- 列表容器内部 -->
+        <div class="pro-title">
+          <div ng-class="{'pro-title-check':business.selected,'pro-title-uncheck':!business.selected}" ng-click="func_selectBusiness($event,business.businessId)"></div>
+          <div class="pro-title-name">
+            <img ng-src="{{business.logo}}" alt="">
+            <span>{{business.businessName}}</span>
+          </div>
+        </div>
+        <div ng-repeat="item in business.businessProductList" style="padding-bottom: 40px;">
+          <div class="pro-body">
+            <div ng-class="{'pro-body-check':item.selected,'pro-body-uncheck':!item.selected}" ng-click="func_selectProduct($event,business.businessId,item.productId)"></div>
+            <div class="pro-body-des">
+              <a ng-href="#/details/{{item.productId}}">
+                <img ng-src="{{item.listImg}}" alt="{{item.productName}}">
+              </a>
+              <div class="pro-body-des-text">
+                <span>{{item.description}}</span>
+                <p>￥{{item.price/100 |  number:2}}</p>
+                <div class="pro-body-des-con">
+                  <div class="floatLeft clearBoth">
+                    <span class="anniu floatLeft" ng-click="func_jian1(item.businessId,item.productId)">-</span>
+                    <input class="floatLeft" type="text" readonly ng-value="item.number">
+                    <span class="anniu floatLeft" ng-click="func_jia1(item.businessId,item.productId)">+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="delete" style="position:relative;z-index: 100;float: right">
+            <i style="color: red;" class="ion-trash-a" ng-click="func_delete(item.businessId,item.productId)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <!-- 固定底边栏 -->
+  <footer id="foot">
+    <div class="footLeft">
+      <div ng-class="{'checkall':selectedAll,'uncheckall':!selectedAll}" ng-click="func_selectAll($event)"></div>
+      <div class="checktext">全选</div>
+      <div class="foot-info">
+        <strong>合计:￥{{obj_cartDbData.total/100 |  number:2}}</strong>
+        <span>总额:￥{{obj_cartDbData.total/100 |  number:2}} 返现:￥0.00</span>
+      </div>
+    </div>
+    <div class="footRight">
+      <a ng-href="#/order">
+        去结算
+      </a>
+    </div>
+  </footer>
+
+</ion-view>

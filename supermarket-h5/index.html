@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=4, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!--公共css-->
+    <link href="css/mui/mui.css" rel="stylesheet">
+    <link href="css/cards/mui.picker.css" rel="stylesheet" />
+    <link href="css/cards/mui.poppicker.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet">
+    <link href="lib/Swiper/dist/css/swiper.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <!--<link href="css/mui/mui.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/mui/mui.css" rel="stylesheet">
+    <link href="css/guidePage/guidePage.css" rel="stylesheet">
+    <link href="css/home/home.css" rel="stylesheet">
+    <link href="css/category/category.css" rel="stylesheet">
+    <link href="css/goodsList/goodsList.css" rel="stylesheet">
+    <link href="css/details/details.css" rel="stylesheet">
+    <link href="css/cart/cart.css" rel="stylesheet">
+    <link href="css/account/account.css" rel="stylesheet">
+    <link href="lib/Swiper/dist/css/swiper.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/order/general.css">
+    <link rel="stylesheet" type="text/css" href="css/order/order.css">
+    <link rel="stylesheet" type="text/css" href="css/order/pay.css">
+    <link rel="stylesheet" type="text/css" href="css/order/user.css">-->
+
+    <!--全局文件 -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/global.js"></script>
+    <script src="areas/common/common.js"></script>
+    <script src="areas/common/indexdb.js"></script>
+    
+    <script src="js/mui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/mui.picker.js"></script>
+    <script src="js/mui.poppicker.js"></script>
+    <script src="js/md5.min.js"></script>
+    <script src="js/appSign.js"></script>
+
+    <!--功能模块js-->
+    <script src="areas/guidePage/guidePage_controller.js"></script>
+    <script src="areas/guidePage/guidePage_route.js"></script>
+    <script src="areas/guidePage/guidePage_service.js"></script>
+    <script src="areas/tab/tab_controller.js"></script>
+    <script src="areas/tab/tab_route.js"></script>
+    <script src="areas/home/home_controller.js"></script>
+    <script src="areas/home/home_route.js"></script>
+    <script src="areas/home/home_service.js"></script>
+    <script src="areas/category/category_controller.js"></script>
+    <script src="areas/category/category_route.js"></script>
+    <script src="areas/category/category_service.js"></script>
+    <script src="areas/goodsList/goodsList_controller.js"></script>
+    <script src="areas/goodsList/goodsList_route.js"></script>
+    <script src="areas/goodsList/goodsList_service.js"></script>
+    <script src="areas/details/details_controller.js"></script>
+    <script src="areas/details/details_service.js"></script>
+    <script src="areas/details/details_route.js"></script>
+    <script src="areas/cart/cart_controller.js"></script>
+    <script src="areas/cart/cart_service.js"></script>
+    <script src="areas/cart/cart_route.js"></script>
+    <script src="areas/account/account_controller.js"></script>
+    <script src="areas/account/account_service.js"></script>
+    <script src="areas/account/account_route.js"></script>
+    <script src="areas/order/order_controller.js"></script>
+    <script src="areas/order/order_service.js"></script>
+    <script src="areas/order/order_route.js"></script>
+    <script src="areas/addressList/address_list_controller.js"></script>
+    <script src="areas/addressList/address_list_route.js"></script>
+    <script src="areas/addressList/address_list_service.js"></script>
+    <script src="areas/addressDetail/address_detail_controller.js"></script>
+    <script src="areas/addressDetail/address_detail_route.js"></script>
+    <script src="areas/addressDetail/address_detail_service.js"></script>
+    <script src="areas/orderList/orderList_controller.js"></script>
+    <script src="areas/orderList/orderList_service.js"></script>
+    <script src="areas/orderList/orderList_route.js"></script>
+    <script src="areas/orderDetail/orderDetail_controller.js"></script>
+    <script src="areas/orderDetail/orderDetail_service.js"></script>
+    <script src="areas/orderDetail/orderDetail_route.js"></script>
+    <script src="areas/pay/pay_controller.js"></script>
+    <script src="areas/pay/pay_service.js"></script>
+    <script src="areas/pay/pay_route.js"></script>
+    <script src="areas/cards/cards_controller.js"></script>
+    <script src="areas/cards/cards_service.js"></script>
+    <script src="areas/cards/cards_route.js"></script>
+    <script src="areas/bankcard/bankcard_controller.js"></script>
+    <script src="areas/bankcard/bankcard_service.js"></script>
+    <script src="areas/bankcard/bankcard_route.js"></script>
+    <script src="areas/wallet/wallet_controller.js"></script>
+    <script src="areas/wallet/wallet_service.js"></script>
+    <script src="areas/wallet/wallet_route.js"></script>
+    <script src="areas/withdrawalCredit/withdrawalCredit_controller.js"></script>
+    <script src="areas/withdrawalCredit/withdrawalCredit_service.js"></script>
+    <script src="areas/withdrawalCredit/withdrawalCredit_route.js"></script>
+    <script src="areas/creditList/creditList_controller.js"></script>
+    <script src="areas/creditList/creditList_service.js"></script>
+    <script src="areas/creditList/creditList_route.js"></script>
+    <script src="areas/shopCredit/shopCredit_controller.js"></script>
+    <script src="areas/shopCredit/shopCredit_service.js"></script>
+    <script src="areas/shopCredit/shopCredit_route.js"></script>
+    <script src="areas/myFavorite/myFavorite_controller.js"></script>
+    <script src="areas/myFavorite/myFavorite_service.js"></script>
+    <script src="areas/myFavorite/myFavorite_route.js"></script>
+    <script src="areas/withdraw/withdraw_controller.js"></script>
+    <script src="areas/withdraw/withdraw_service.js"></script>
+    <script src="areas/withdraw/withdraw_route.js"></script>
+
+    <!--第三方插件js-->
+    <script src="lib/Swiper/dist/js/swiper.js"></script>
+    <script src="lib/ionic-image-lazy-load/ionic-image-lazy-load.js"></script>
+
+  </head>
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

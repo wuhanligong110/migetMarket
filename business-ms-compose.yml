@@ -1,0 +1,95 @@
+version: "3"
+
+services:
+    jce_java:
+        build: ./docker-jce-jre
+        image: avail/jce-java
+        read_only: true
+        command: echo "jce java"
+        environment:
+            - TZ=Asia/Shanghai
+    account:
+        build: ./account-ms
+        image: avail/account-ms
+        ports:
+            - "10014:10014"
+            - "10248:10248"
+        depends_on:
+            - 'jce_java'
+        healthcheck:
+           test: ["CMD", "curl", "-f", "http://localhost:10888"]
+           interval: 10s
+           timeout: 5s
+           retries: 3
+        environment:
+            - TZ=Asia/Shanghai
+    order:
+        build: ./order-ms
+        image: avail/order-ms
+        ports:
+            - "8295:8295"
+            - "10848:10848"
+        depends_on:
+            - 'jce_java'
+        healthcheck:
+           test: ["CMD", "curl", "-f", "http://localhost:10888"]
+           interval: 10s
+           timeout: 5s
+           retries: 3
+        environment:
+            - TZ=Asia/Shanghai
+    product:
+        build: ./product-ms
+        image: avail/product-ms
+        ports:
+            - "8040:8040"
+            - "10912:10912"
+        depends_on:
+            - 'jce_java'
+        healthcheck:
+           test: ["CMD", "curl", "-f", "http://localhost:10888"]
+           interval: 10s
+           timeout: 5s
+           retries: 3
+        environment:
+            - TZ=Asia/Shanghai
+    gateway:
+        build: ./api-gateway-ms
+        image: avail/gateway-ms
+        ports:
+            - "7291:7291"
+            - "10211:10211"
+        depends_on:
+            - 'jce_java'
+        environment:
+            - TZ=Asia/Shanghai
+    activity:
+        build: ./activity-ms
+        image: avail/activity-ms
+        ports:
+            - "10018:10018"
+            - "10858:10858"
+        depends_on:
+            - 'jce_java'
+        healthcheck:
+           test: ["CMD", "curl", "-f", "http://localhost:10888"]
+           interval: 10s
+           timeout: 5s
+           retries: 3
+        environment:
+            - TZ=Asia/Shanghai
+    pay:
+        build: ./pay-ms
+        image: avail/pay-ms
+        ports:
+            - "10019:10019"
+            - "10898:10898"
+        depends_on:
+            - 'jce_java'
+        healthcheck:
+           test: ["CMD", "curl", "-f", "http://localhost:10888"]
+           interval: 10s
+           timeout: 5s
+           retries: 3
+        environment:
+            - TZ=Asia/Shanghai

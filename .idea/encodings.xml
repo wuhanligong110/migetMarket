@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/activity-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-gateway-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common-dps" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-registry-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix-dashboard-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mq-dps" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pay-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/product-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-admin-ms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/weixin-dps" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zipkin-ms" charset="UTF-8" />
+  </component>
+</project>

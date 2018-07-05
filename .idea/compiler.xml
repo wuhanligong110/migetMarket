@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="account-ms" />
+        <module name="activity-ms" />
+        <module name="api-gateway-ms" />
+        <module name="common-dps" />
+        <module name="config-ms" />
+        <module name="eureka-registry-ms" />
+        <module name="hystrix-dashboard-ms" />
+        <module name="mq-dps" />
+        <module name="order-ms" />
+        <module name="pay-ms" />
+        <module name="product-ms" />
+        <module name="spring-boot-admin-ms" />
+        <module name="weixin-dps" />
+        <module name="zipkin-ms" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="account-ms" target="1.8" />
+      <module name="activity-ms" target="1.8" />
+      <module name="api-gateway-ms" target="1.8" />
+      <module name="common-dps" target="1.8" />
+      <module name="config-ms" target="1.8" />
+      <module name="eureka-registry-ms" target="1.8" />
+      <module name="hystrix-dashboard-ms" target="1.8" />
+      <module name="migetMarket" target="1.8" />
+      <module name="mq-dps" target="1.8" />
+      <module name="order-ms" target="1.8" />
+      <module name="pay-ms" target="1.8" />
+      <module name="product-ms" target="1.8" />
+      <module name="spring-boot-admin-ms" target="1.8" />
+      <module name="weixin-dps" target="1.8" />
+      <module name="zipkin-ms" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

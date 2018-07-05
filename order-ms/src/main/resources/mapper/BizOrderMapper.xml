@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miget.hxb.persistence.BizOrderMapper">
+  <resultMap id="BaseResultMap" type="com.miget.hxb.domain.BizOrder">
+    <id column="tord_order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="tord_out_trade_no" jdbcType="VARCHAR" property="outTradeNo" />
+    <result column="tord_user_id" jdbcType="INTEGER" property="userId" />
+    <result column="tord_address_id" jdbcType="INTEGER" property="addressId" />
+    <result column="tord_amount" jdbcType="BIGINT" property="amount" />
+    <result column="tord_order_status" jdbcType="INTEGER" property="orderStatus" />
+    <result column="tord_is_payed" jdbcType="INTEGER" property="isPayed" />
+    <result column="tord_pay_id" jdbcType="INTEGER" property="payId" />
+    <result column="tord_pay_type" jdbcType="INTEGER" property="payType" />
+    <result column="tord_create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="tord_update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="tord_operator" jdbcType="VARCHAR" property="operator" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    tord.order_id as tord_order_id, tord.out_trade_no as tord_out_trade_no, tord.user_id as tord_user_id,
+    tord.address_id as tord_address_id, tord.amount as tord_amount, tord.order_status as tord_order_status,
+    tord.is_payed as tord_is_payed, tord.pay_id as tord_pay_id, tord.pay_type as tord_pay_type,
+    tord.create_time as tord_create_time, tord.update_time as tord_update_time, tord.operator as tord_operator
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbiz_order tord
+    where tord.order_id = #{orderId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tbiz_order
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.miget.hxb.domain.BizOrder">
+    insert into tbiz_order (order_id, out_trade_no, user_id,
+    address_id, amount, order_status,
+    is_payed, pay_id, pay_type,
+    create_time, update_time, operator
+    )
+    values (#{orderId,jdbcType=BIGINT}, #{outTradeNo,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER},
+    #{addressId,jdbcType=INTEGER}, #{amount,jdbcType=BIGINT}, #{orderStatus,jdbcType=INTEGER},
+    #{isPayed,jdbcType=INTEGER}, #{payId,jdbcType=INTEGER}, #{payType,jdbcType=INTEGER},
+    #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{operator,jdbcType=VARCHAR}
+    )
+  </insert>
+  <insert id="insertSelective" parameterType="com.miget.hxb.domain.BizOrder" useGeneratedKeys="true" keyProperty="orderId">
+    insert into tbiz_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="outTradeNo != null">
+        out_trade_no,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="addressId != null">
+        address_id,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="isPayed != null">
+        is_payed,
+      </if>
+      <if test="payId != null">
+        pay_id,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="outTradeNo != null">
+        #{outTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="addressId != null">
+        #{addressId,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=BIGINT},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isPayed != null">
+        #{isPayed,jdbcType=INTEGER},
+      </if>
+      <if test="payId != null">
+        #{payId,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.miget.hxb.domain.BizOrder">
+    update tbiz_order
+    <set>
+      <if test="outTradeNo != null">
+        out_trade_no = #{outTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="addressId != null">
+        address_id = #{addressId,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=BIGINT},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isPayed != null">
+        is_payed = #{isPayed,jdbcType=INTEGER},
+      </if>
+      <if test="payId != null">
+        pay_id = #{payId,jdbcType=INTEGER},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.miget.hxb.domain.BizOrder">
+    update tbiz_order
+    set out_trade_no = #{outTradeNo,jdbcType=VARCHAR},
+    user_id = #{userId,jdbcType=INTEGER},
+    address_id = #{addressId,jdbcType=INTEGER},
+    amount = #{amount,jdbcType=BIGINT},
+    order_status = #{orderStatus,jdbcType=INTEGER},
+    is_payed = #{isPayed,jdbcType=INTEGER},
+    pay_id = #{payId,jdbcType=INTEGER},
+    pay_type = #{payType,jdbcType=INTEGER},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_time = #{updateTime,jdbcType=TIMESTAMP},
+    operator = #{operator,jdbcType=VARCHAR}
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+
+  <update id="payConfirm" parameterType="com.miget.hxb.model.request.PaymentRequest">
+    update tbiz_order
+    set
+      is_payed = 1,
+      update_time = now()
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+
+  <resultMap id="OrderListResultMap" type="com.miget.hxb.model.response.OrderListResponse">
+    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="out_trade_no" jdbcType="VARCHAR" property="outTradeNo" />
+    <result column="amount" jdbcType="BIGINT" property="amount" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
+    <collection property="orderItems" ofType="com.miget.hxb.model.response.OrderItemResponse">
+      <result column="product_id" property="productId" jdbcType="INTEGER"/>
+      <result column="business_id" property="businessId" jdbcType="INTEGER"/>
+      <result column="product_img" property="productImg" jdbcType="VARCHAR"/>
+      <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+      <result column="product_price" property="productPrice" jdbcType="INTEGER"/>
+      <result column="product_count" property="productCount" jdbcType="INTEGER"/>
+    </collection>
+  </resultMap>
+
+  <select id="orderPageList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbiz_order tord,tbiz_order_item toi
+    where tord.order_id = toi.order_id
+    and toi.business_id = #{businessId,jdbcType=INTEGER}
+    group by tord.order_id
+  </select>
+
+  <select id="queryOrderByTradeNo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbiz_order tord
+    where tord.out_trade_no = #{outTradeNo,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryUserOrderPageList" resultMap="BaseResultMap" parameterType="com.miget.hxb.model.request.OrderStatusPageRequest">
+    select
+    <include refid="Base_Column_List" />
+    from tbiz_order tord
+    where tord.user_id = #{userId,jdbcType=INTEGER}
+    <if test="orderStatus != null">
+      and tord.order_status = #{orderStatus,jdbcType=INTEGER}
+    </if>
+    order by tord.create_time desc
+  </select>
+
+  <select id="userOrderList" resultMap="OrderListResultMap" parameterType="java.util.List">
+    select
+    tord.order_id,tord.out_trade_no,tord.amount,tord.order_status,tordi.product_id,tordi.product_price,tordi.product_count
+    from tbiz_order tord,tbiz_order_item tordi
+    where tord.order_id = tordi.order_id
+    and tord.order_id
+    <foreach item="item" open="IN (" close=")" separator="," collection="list">
+      #{item}
+    </foreach>
+    order by tord.create_time desc
+  </select>
+
+  <resultMap id="OrderDetailResultMap" type="com.miget.hxb.model.response.OrderDetailResponse">
+    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="out_trade_no" jdbcType="VARCHAR" property="outTradeNo" />
+    <result column="amount" jdbcType="BIGINT" property="amount" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
+    <result column="courier_company" jdbcType="VARCHAR" property="courierCompany" />
+    <result column="courier_number" jdbcType="VARCHAR" property="courierNumber" />
+    <result column="address_id" jdbcType="INTEGER" property="addressId" />
+    <result column="payType" jdbcType="VARCHAR" property="payType" />
+    <result column="createTime" jdbcType="VARCHAR" property="createTime" />
+    <collection property="orderItems" ofType="com.miget.hxb.model.response.OrderItemResponse">
+      <result column="product_id" property="productId" jdbcType="INTEGER"/>
+      <result column="business_id" property="businessId" jdbcType="INTEGER"/>
+      <result column="product_img" property="productImg" jdbcType="VARCHAR"/>
+      <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+      <result column="product_price" property="productPrice" jdbcType="INTEGER"/>
+      <result column="product_count" property="productCount" jdbcType="INTEGER"/>
+    </collection>
+  </resultMap>
+
+  <select id="orderDetail" resultMap="OrderDetailResultMap">
+    SELECT
+        tord.order_id,
+        tord.out_trade_no,
+        tord.amount,
+        tord.order_status,
+        tord.address_id,
+        (
+            CASE tord.pay_type
+            WHEN 1 THEN
+                '积分购买'
+            WHEN 2 THEN
+                '购物积分兑换'
+            WHEN 3 THEN
+                '微信支付'
+            WHEN 4 THEN
+                '支付宝支付'
+            END
+        ) AS payType,
+        DATE_FORMAT(tord.create_time,'%Y-%m-%d %H:%i:%s') AS createTime,
+        tordi.courier_company,
+        tordi.courier_number,
+        tordi.product_id,
+        tordi.product_price,
+        tordi.product_count
+    FROM
+        tbiz_order tord,
+        tbiz_order_item tordi
+    WHERE
+        tord.order_id = tordi.order_id
+    AND tord.order_id = #{orderId,jdbcType=BIGINT}
+  </select>
+</mapper>

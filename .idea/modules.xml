@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/account-ms/account-ms.iml" filepath="$PROJECT_DIR$/account-ms/account-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/activity-ms/activity-ms.iml" filepath="$PROJECT_DIR$/activity-ms/activity-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-gateway-ms/api-gateway-ms.iml" filepath="$PROJECT_DIR$/api-gateway-ms/api-gateway-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-dps/common-dps.iml" filepath="$PROJECT_DIR$/common-dps/common-dps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-ms/config-ms.iml" filepath="$PROJECT_DIR$/config-ms/config-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-registry-ms/eureka-registry-ms.iml" filepath="$PROJECT_DIR$/eureka-registry-ms/eureka-registry-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard-ms/hystrix-dashboard-ms.iml" filepath="$PROJECT_DIR$/hystrix-dashboard-ms/hystrix-dashboard-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/migetMarket.iml" filepath="$PROJECT_DIR$/.idea/migetMarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mq-dps/mq-dps.iml" filepath="$PROJECT_DIR$/mq-dps/mq-dps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-ms/order-ms.iml" filepath="$PROJECT_DIR$/order-ms/order-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pay-ms/pay-ms.iml" filepath="$PROJECT_DIR$/pay-ms/pay-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-ms/product-ms.iml" filepath="$PROJECT_DIR$/product-ms/product-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-admin-ms/spring-boot-admin-ms.iml" filepath="$PROJECT_DIR$/spring-boot-admin-ms/spring-boot-admin-ms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin-dps/weixin-dps.iml" filepath="$PROJECT_DIR$/weixin-dps/weixin-dps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin-ms/zipkin-ms.iml" filepath="$PROJECT_DIR$/zipkin-ms/zipkin-ms.iml" />
+    </modules>
+  </component>
+</project>

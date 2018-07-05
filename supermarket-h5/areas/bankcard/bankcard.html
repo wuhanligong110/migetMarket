@@ -1,0 +1,42 @@
+<ion-view id="bankcard" view-title="银行卡绑定" hide-back-button="true" cache-view="false">
+  <ion-content class="scroll-content" scroll="false">
+    <style>
+      body{
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #848484;
+      }
+      input{
+        font-size:10px ;
+      }
+    </style>
+    <div class="mui-content">
+      <form class="mui-input-group">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell" style="padding: 8px 15px;">
+            <label style="width:20%;font-family: sans-serif;color: #848484;float: left;height: 34px;line-height: 34px;">银行账号</label>
+            <input style="width:70%;font-family: sans-serif;color: #3F424B;margin: 0;padding: 0;" id='account' type="number" class="mui-input-clear mui-input" placeholder="请输入开户行银行卡号">
+          </li>
+          <li class="mui-table-view-cell" style="padding: 8px 15px;">
+            <label style="width:20%;font-family: sans-serif;color: #848484;float: left;height: 34px;line-height: 34px;">开户名称</label>
+            <input style="width:70%;font-family: sans-serif;color: #3F424B;margin: 0;padding: 0;" id='username' type="text" class="mui-input-clear mui-input" placeholder="请输入开户行用户名">
+          </li>
+          <li class="mui-table-view-cell" style="padding: 8px 15px;" id='showBankPicker'>
+            <a class="mui-navigate-right">
+              <label style="width:20%;font-family: sans-serif;color: #848484;float: left;height: 34px;line-height: 34px;">开&nbsp;户&nbsp;行</label>
+              <input id='openBank' readonly="readonly" style="width:60%;font-family: sans-serif;color: #3F424B;margin: 0;padding: 0;float: left;background-color: #fff;" type="text" class="mui-input-clear mui-input" >
+              <span  style="font-size: 12px;color: #848484;height: 34px;line-height: 34px;">请选择</span>
+            </a>
+          </li>
+          <li class="mui-table-view-cell" style="padding: 8px 15px;">
+            <label style="width:20%;font-family: sans-serif;color: #848484;float: left;height: 34px;line-height: 34px;">手机号码</label>
+            <input style="width:78%;font-size: 12px;font-family: sans-serif;color: #3F424B;margin: 0;padding: 0;" id='mobile' type="number" class="mui-input-clear mui-input" placeholder="请输入银行预留手机号码"></input>
+          </li>
+        </ul>
+      </form>
+      <div class="mui-row mui-text-center" style="padding: 3em 0 0 0;">
+        <button id='bandAccount' ng-click="func_bankcard()" type="button" class="mui-btn mui-btn-danger" style="width: 80%; border-radius: 8px;height: 40px;">绑定</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

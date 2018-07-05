@@ -1,0 +1,59 @@
+<ion-view id="order" view-title="确认订单" hide-back-button="true" cache-view="false">
+  <ion-content class="scroll-content" scroll="false">
+    <link rel="stylesheet" type="text/css" href="../css/order/general.css">
+    <link rel="stylesheet" type="text/css" href="../css/order/order.css">
+    <link rel="stylesheet" type="text/css" href="../css/order/pay.css">
+    <link rel="stylesheet" type="text/css" href="../css/order/user.css">
+    <div class="wrapper" id="wrapper">
+      <div class="confirm">
+        <div class="row" id="consignee">
+          <div class="lc">收件人</div>
+          <!--<div >-->
+              <div class="rc" ui-sref="addressList()" ng-if="consignee != null" style="position: relative;margin-left: 0px;width: 98%;">
+                <div class="unfold fr" style="position: absolute;padding-left: 95% !important;"><i class="icon ion-chevron-right"></i></div>
+                <h4 class="c666" data-id="{{consignee.id}}">{{consignee.receivingUserName}}<span class="ml10">{{consignee.mobile}}</span></h4>
+                <p class="mt5 c888">{{consignee.provinceName}}{{consignee.cityName}}{{consignee.area}}{{consignee.receivingAddress}}</p>
+              </div>
+            <!--</div>-->
+          <!--<div ng-if="consignee == null">-->
+            <div ng-if="consignee == null" class="rc" ui-sref="addressList()"><a class="add" ng-href="#/address/detail/">+ 添加收件人</a></div>
+          <!--</div>-->
+        </div>
+        <div class="parcel row" id="parcel">
+          <div class="lc">包裹清单</div>
+          <div class="rc" style="width: 80%">
+            <ul class="gli" id="gli">
+              <li ng-repeat="item in order.items">
+                <div class="im"><img alt="{{item.productName}}" ng-src="{{item.listImg}}"/></div>
+                <div class="info">
+                  <div class="name">{{item.productName}}</div>
+                  <p class="subtotal mt5 c666"><span class="price mr10"><i class="cny">¥</i><font class="f14">{{item.price/100 |  number:2}}</font></span>×<b class="q">{{item.number}}</b></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="memos row">
+          <div class="lc">留言备注</div>
+          <div class="rc" style="width: 80%;margin-right: 0px;"><textarea name="memos" class="vtextarea" id="memos" placeholder="填写您对订单需要备注的内容，没有请留空"></textarea></div>
+        </div>
+        <div class="amount">
+          <h3 class="f14 center">订单合计</h3>
+          <dl>
+            <dt>商品合计:</dt>
+            <dd class="c666"><i class="cny">¥</i><font class="f14" id="goods-amount">{{order.total/100 |  number:2}}</font></dd>
+          </dl>
+          <dl>
+            <dt>运费:</dt>
+            <dd class="c666"><i class="cny">¥</i><font class="f14" id="shipping-amount">0.00</font></dd>
+          </dl>
+          <dl class="totals">
+            <dt class="f14">共计:</dt>
+            <dd class="f18"><i class="cny">¥</i><font id="total-amount">{{order.total/100 |  number:2}}</font></dd>
+          </dl>
+        </div>
+        <div class="submit mt20"><a class="f14 xauto center" ng-click="func_submitOrder(order)" >提交订单</a></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
