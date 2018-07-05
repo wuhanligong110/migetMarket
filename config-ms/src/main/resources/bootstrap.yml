@@ -18,11 +18,12 @@ eureka:
     status-page-url-path: ${management.context-path}/info
     health-check-url-path: ${management.context-path}/health
     prefer-ip-address: false
+    hostname: config_server
 spring:
   rabbitmq:
     host: rabbitmq
     username: avail
-    password: 123123
+    password: 123456
     virtual-host: avail
     listener:
       retry:

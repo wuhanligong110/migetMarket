@@ -53,5 +53,5 @@ auth:
     url: '/account/api/v1/users/login,/account/api/v1/users/weixin/login,/activity/api/v1/advs/**,/product/api/v1/products/**,/product/api/v1/businesses/**,/swagger/**'
 resources:
   list:
-    url: 'http://localhost:10014/resources/listResources?status=1'
-    roleName: 'http://localhost:10014/resources/listRoleNameByResourceId'
+    url: 'http://account:10014/resources/listResources?status=1'
+    roleName: 'http://account:10014/resources/listRoleNameByResourceId'

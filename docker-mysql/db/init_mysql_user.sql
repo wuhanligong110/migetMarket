@@ -1,5 +1,5 @@
-CREATE USER 'chris'
-  IDENTIFIED BY '123123';
+CREATE USER 'avail'
+  IDENTIFIED BY '123456';
 
 CREATE SCHEMA IF NOT EXISTS `account`
   DEFAULT CHARACTER SET utf8;
@@ -7,10 +7,13 @@ CREATE SCHEMA IF NOT EXISTS `product`
   DEFAULT CHARACTER SET utf8;
 CREATE SCHEMA IF NOT EXISTS `order`
   DEFAULT CHARACTER SET utf8;
-CREATE SCHEMA IF NOT EXISTS `membership`
+CREATE SCHEMA IF NOT EXISTS `pay`
+  DEFAULT CHARACTER SET utf8;
+CREATE SCHEMA IF NOT EXISTS `activity`
   DEFAULT CHARACTER SET utf8;
 
-GRANT ALL ON `account`.* TO 'chris';
-GRANT ALL ON `product`.* TO 'chris';
-GRANT ALL ON `order`.* TO 'chris';
-GRANT ALL ON `membership`.* TO 'chris';
+GRANT ALL ON `account`.* TO 'avail';
+GRANT ALL ON `product`.* TO 'avail';
+GRANT ALL ON `order`.* TO 'avail';
+GRANT ALL ON `pay`.* TO 'avail';
+GRANT ALL ON `activity`.* TO 'avail';

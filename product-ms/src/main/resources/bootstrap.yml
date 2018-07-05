@@ -17,19 +17,20 @@ eureka:
         path: ${management.context-path}/health
     status-page-url-path: ${management.context-path}/info
     health-check-url-path: ${management.context-path}/health
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: false
+    hostname: product
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 spring:
   application:
     name: 'product'
   datasource:
-    username: avail
-    password: 123123
+    username: root
+    password: 123456
     url: 'jdbc:mysql://solar_mysql:3306/product?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&useSSL=false&serverTimezone=Asia/Shanghai'
   rabbitmq:
     host: rabbitmq
     username: avail
-    password: 123123
+    password: 123456
     virtual-host: avail
     listener:
       retry:

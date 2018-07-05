@@ -53,16 +53,6 @@ services:
            retries: 3
         environment:
             - TZ=Asia/Shanghai
-    gateway:
-        build: ./api-gateway-ms
-        image: avail/gateway-ms
-        ports:
-            - "7291:7291"
-            - "10211:10211"
-        depends_on:
-            - 'jce_java'
-        environment:
-            - TZ=Asia/Shanghai
     activity:
         build: ./activity-ms
         image: avail/activity-ms

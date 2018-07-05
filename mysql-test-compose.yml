@@ -1,11 +1,10 @@
 version: "3"
 
 services:
-    solar_mysql:
+    solar_mysql2:
         image: mysql:5.7.17
         ports:
-            - "3306:3306"
-        restart: always
+            - "6606:3306"
         volumes:
             - "./docker-mysql/share/:/share/"
             - "./docker-mysql/db/:/docker-entrypoint-initdb.d/:ro"
