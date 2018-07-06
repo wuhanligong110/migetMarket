@@ -42,7 +42,7 @@ spring:
     publisher-confirms: true
     publisher-returns: true
   redis:
-    host: 10.16.0.113
+    host: mx_redis
     port: 6379
     timeout: 10000
     pool:
