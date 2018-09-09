@@ -1,15 +1,14 @@
 version: "3"
 
 services:
-    jce_java:
-        build: ./docker-jce-jre
-        image: avail/jce-java
-        read_only: true
-        command: echo "jce java"
-        environment:
-            - TZ=Asia/Shanghai
     rabbitmq:
         image: rabbitmq:3.6.6-management
+        deploy:
+          resources:
+            limits:
+              memory: 128M
+            reservations:
+              memory: 64M
         ports:
             - "5671:5671"
             - "5672:5672"
@@ -24,6 +23,12 @@ services:
             - RABBITMQ_DEFAULT_VHOST=avail
     solar_mysql:
         image: mysql:5.7.17
+        deploy:
+          resources:
+            limits:
+              memory: 128M
+            reservations:
+              memory: 64M
         ports:
             - "3306:3306"
         volumes:
